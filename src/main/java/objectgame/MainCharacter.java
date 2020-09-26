@@ -16,6 +16,8 @@ public class MainCharacter {
     private float y = 0;
     private float speedY = 0;
     private Animation characterRun;
+    private Rectangle rect;
+    private boolean isAlive = true;
 
     public MainCharacter() {
         characterRun = new Animation(50);
@@ -25,6 +27,7 @@ public class MainCharacter {
         characterRun.addFrame(Resourse.getResourceImage("data/character_move4.png"));
         characterRun.addFrame(Resourse.getResourceImage("data/character_move5.png"));
         characterRun.addFrame(Resourse.getResourceImage("data/character_move6.png"));
+        rect = new Rectangle();
 
     }
 
@@ -32,12 +35,19 @@ public class MainCharacter {
         characterRun.update();
         if(y >= GROUNDY - characterRun.getFrame().getHeight()) {
             speedY = 0;
-            y = GROUNDY -characterRun.getFrame().getHeight();
+            y = GROUNDY - characterRun.getFrame().getHeight();
         }
         else {
             speedY += GRAVITY;
             y += speedY;
         }
+        rect.x = (int) x;
+        rect.y = (int) y;
+        rect.width = characterRun.getFrame().getWidth();
+        rect.height = characterRun.getFrame().getHeight();
+    }
+    public  Rectangle getBound() {
+        return rect;
     }
 
     public void draw(Graphics g) {
@@ -47,8 +57,10 @@ public class MainCharacter {
     }
 
     public void jump() {
-        speedY = -4;
-        y += speedY;
+       if (speedY == 0) {
+           speedY = -4;
+           y += speedY;
+       }
     }
 
     public float getX() {
@@ -73,5 +85,13 @@ public class MainCharacter {
 
     public void setSpeedY(float speedY) {
         this.speedY = speedY;
+    }
+
+    public void setAlive (boolean alive) {
+        isAlive = alive;
+    }
+
+    public boolean getAlive() {
+        return isAlive;
     }
 }

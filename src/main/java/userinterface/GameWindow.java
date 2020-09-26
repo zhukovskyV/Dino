@@ -11,7 +11,7 @@ public class GameWindow extends JFrame {
     private GameScreen gameScreen;
 
     public GameWindow() {
-        super("Peeppo Run!");
+        super("Peepo Run!");
 
         setSize(800, 350);
         setLocation(400, 200);
