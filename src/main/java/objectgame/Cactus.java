@@ -10,8 +10,11 @@ public class Cactus extends Enemy {
         private BufferedImage image;
         private int posX, posY;
         private Rectangle rect;
+        private MainCharacter mainCharacter;
+        private boolean isScoreGot = false;
 
-        public Cactus() {
+        public Cactus(MainCharacter mainCharacter) {
+            this.mainCharacter = mainCharacter;
             image = Resourse.getResourceImage("data/cactus1.png");
             posX = 300;
             posY = 207;
@@ -49,6 +52,21 @@ public class Cactus extends Enemy {
         @Override
         public boolean isOutofScreen() {
             return (posX + image.getWidth() < 0);
+        }
+
+        @Override
+        public boolean isOver() {
+            return (mainCharacter.getX() > posX);
+        }
+
+        @Override
+        public boolean isScoreGot() {
+            return isScoreGot;
+        }
+
+        @Override
+        public void setIsScoreGot(boolean isScoreGot) {
+            this.isScoreGot = isScoreGot;
         }
 }
 

@@ -16,8 +16,13 @@ public class MainCharacter {
     private float y = 0;
     private float speedY = 0;
     private Animation characterRun;
+//    private Animation normalRunAnim;
+//    private BufferedImage downRunAnim;
+//    private BufferedImage jump;
+//    private BufferedImage death;
     private Rectangle rect;
     private boolean isAlive = true;
+
 
     public MainCharacter() {
         characterRun = new Animation(50);
@@ -27,6 +32,10 @@ public class MainCharacter {
         characterRun.addFrame(Resourse.getResourceImage("data/character_move4.png"));
         characterRun.addFrame(Resourse.getResourceImage("data/character_move5.png"));
         characterRun.addFrame(Resourse.getResourceImage("data/character_move6.png"));
+//        jump = Resourse.getResourceImage("data/jump.png");
+//        downRunAnim = Resourse.getResourceImage("data/down");
+//        death = Resourse.getResourceImage("data/death");
+
         rect = new Rectangle();
 
     }
@@ -52,7 +61,7 @@ public class MainCharacter {
 
     public void draw(Graphics g) {
         g.setColor(Color.black);
-        g.drawRect((int)x, (int)y, characterRun.getFrame().getWidth(), characterRun.getFrame().getHeight());
+       // g.drawRect((int)x, (int)y, characterRun.getFrame().getWidth(), characterRun.getFrame().getHeight());
         g.drawImage(characterRun.getFrame(), (int)x, (int)y, null);
     }
 

@@ -4,10 +4,12 @@ import objectgame.*;
 import util.Resourse;
 
 import javax.swing.*;
+import java.applet.AudioClip;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
+
 
 public class GameScreen extends JPanel implements Runnable, KeyListener {
     public static final int GAME_FIRST_STATE = 0;
@@ -21,6 +23,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
     private Land land;
     private Clouds clouds;
     private EnemiesManager enemiesManager;
+    private int score;
 
     private int gameState = GAME_FIRST_STATE;
 
@@ -30,9 +33,10 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
         thread = new Thread(this);
         mainCharacter = new MainCharacter();
         mainCharacter.setX(50);
+        mainCharacter.setY(60);
         land = new Land(this);
         clouds = new Clouds();
-        enemiesManager = new EnemiesManager(mainCharacter);
+        enemiesManager = new EnemiesManager(mainCharacter, this);
         imageGameOverText = Resourse.getResourceImage("data/gameover_text.png");
   }
 
@@ -65,15 +69,18 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
                 }
                 break;
         }
+    }
 
+    public void plusScore(int score) {
+        this.score += score;
     }
 
     @Override
     public void paint(Graphics g) {
         g.setColor(Color.decode("#f7f7f7"));
         g.fillRect(0, 0, getWidth(), getHeight());
-        g.setColor(Color.red);
-        g.drawLine(0, (int)GROUNDY, getWidth(), (int)GROUNDY);
+//        g.setColor(Color.red);
+//        g.drawLine(0, (int)GROUNDY, getWidth(), (int)GROUNDY);
 
         switch (gameState) {
             case GAME_FIRST_STATE:
@@ -84,18 +91,25 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
                 land.draw(g);
                 mainCharacter.draw(g);
                 enemiesManager.draw(g);
+                g.drawString("HI " + String.valueOf(score), 720, 20);
                 break;
             case GAME_OVER_STATE:
                 clouds.draw(g);
                 land.draw(g);
-               // mainCharacter.draw(g);
+                mainCharacter.draw(g);
                 enemiesManager.draw(g);
                 g.drawImage(imageGameOverText, 300, 110, null);
                 break;
         }
-
-
     }
+
+    private void resetGame() {
+        mainCharacter.setAlive(true);
+        mainCharacter.setX(50);
+        mainCharacter.setY(70);
+        enemiesManager.reset();
+      }
+
     @Override
     public void keyTyped(KeyEvent e) {
     }
@@ -114,6 +128,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
             else if (gameState == GAME_PLAY_STATE)
                 mainCharacter.jump();
             else if (gameState == GAME_OVER_STATE) {
+                resetGame();
                 gameState = GAME_PLAY_STATE;
             }
             break;

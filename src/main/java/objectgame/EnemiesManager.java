@@ -1,5 +1,6 @@
 package objectgame;
 
+import userinterface.GameScreen;
 import util.Resourse;
 
 import java.awt.*;
@@ -14,22 +15,27 @@ public class EnemiesManager {
 
     private BufferedImage imageCactus1, imageCactus2;
     private MainCharacter mainCharacter;
+    private GameScreen gameScreen;
 
-    public EnemiesManager (MainCharacter mainCharacter) {
+    public EnemiesManager (MainCharacter mainCharacter, GameScreen gameScreen) {
+        this.gameScreen = gameScreen;
         this.mainCharacter = mainCharacter;
         enemies = new ArrayList<Enemy>();
         imageCactus1 = Resourse.getResourceImage("data/cactus1.png");
         imageCactus2 = Resourse.getResourceImage("data/cactus2.png");
         random = new Random();
 
-        Cactus cactus = new Cactus();
+        Cactus cactus = new Cactus(mainCharacter);
         enemies.add(getRandomCactus());
-        random = new Random();
     }
 
     public void update() {
         for (Enemy e : enemies) {
             e.update();
+            if (e.isOver() && !e.isScoreGot()) {
+                gameScreen.plusScore(20);
+                e.setIsScoreGot(true);
+            }
             if (e.getBound().intersects(mainCharacter.getBound())) {
                 mainCharacter.setAlive(false);
             }
@@ -47,9 +53,14 @@ public class EnemiesManager {
         }
     }
 
+    public void reset() {
+        enemies.clear();
+        enemies.add(getRandomCactus());
+    }
+
     private Cactus getRandomCactus() {
         Cactus cactus;
-        cactus = new Cactus();
+        cactus = new Cactus(mainCharacter);
         cactus.setX(800);
         if (random.nextBoolean()) {
             cactus.setImage(imageCactus1);
