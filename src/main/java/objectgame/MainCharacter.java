@@ -12,14 +12,30 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class MainCharacter {
+    private static final int RUN = 0;
+    private static final int JUMP = 1;
+    private static final int DOWN = 2;
+    private static final int DEATH = 3;
+
+    private int state = RUN;
+
     private float x = 0;
     private float y = 0;
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
     private float speedY = 0;
     private Animation characterRun;
 //    private Animation normalRunAnim;
-//    private BufferedImage downRunAnim;
-//    private BufferedImage jump;
-//    private BufferedImage death;
+    private BufferedImage downRunAnim;
+    private BufferedImage jumping;
+    private BufferedImage death;
     private Rectangle rect;
     private boolean isAlive = true;
 
@@ -32,9 +48,9 @@ public class MainCharacter {
         characterRun.addFrame(Resourse.getResourceImage("data/character_move4.png"));
         characterRun.addFrame(Resourse.getResourceImage("data/character_move5.png"));
         characterRun.addFrame(Resourse.getResourceImage("data/character_move6.png"));
-//        jump = Resourse.getResourceImage("data/jump.png");
-//        downRunAnim = Resourse.getResourceImage("data/down");
-//        death = Resourse.getResourceImage("data/death");
+        jumping = Resourse.getResourceImage("data/jump.png");
+        downRunAnim = Resourse.getResourceImage("data/down.png");
+        death = Resourse.getResourceImage("data/death.png");
 
         rect = new Rectangle();
 
@@ -52,7 +68,7 @@ public class MainCharacter {
         }
         rect.x = (int) x;
         rect.y = (int) y;
-        rect.width = characterRun.getFrame().getWidth();
+        rect.width = characterRun.getFrame().getWidth() - 8;
         rect.height = characterRun.getFrame().getHeight();
     }
     public  Rectangle getBound() {
@@ -61,14 +77,36 @@ public class MainCharacter {
 
     public void draw(Graphics g) {
         g.setColor(Color.black);
-       // g.drawRect((int)x, (int)y, characterRun.getFrame().getWidth(), characterRun.getFrame().getHeight());
-        g.drawImage(characterRun.getFrame(), (int)x, (int)y, null);
+        //System.out.println(state);
+        g.drawRect((int)x, (int)y, characterRun.getFrame().getWidth(), characterRun.getFrame().getHeight());
+        switch (state) {
+            case RUN:
+                g.drawImage(characterRun.getFrame(), (int) x, (int) y, null);
+                break;
+            case JUMP:
+                g.drawImage(jumping, (int) x, (int) y, null);
+                break;
+            case DOWN:
+                g.drawImage(downRunAnim, (int) x, (int) y + 20, null);
+                break;
+            case DEATH:
+                g.drawImage(death, (int) x, (int) y , null);
+                break;
+        }
+    }
+
+    public void Down(Boolean isDown) {
+        if (isDown)
+            state = DOWN;
+        else
+            state = RUN;
     }
 
     public void jump() {
        if (speedY == 0) {
            speedY = -4;
            y += speedY;
+           state = JUMP;
        }
     }
 

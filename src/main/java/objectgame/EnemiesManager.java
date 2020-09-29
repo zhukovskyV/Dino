@@ -21,7 +21,7 @@ public class EnemiesManager {
         this.gameScreen = gameScreen;
         this.mainCharacter = mainCharacter;
         enemies = new ArrayList<Enemy>();
-        imageCactus1 = Resourse.getResourceImage("data/cactus1.png");
+        imageCactus1 = Resourse.getResourceImage("data/enemy.png");
         imageCactus2 = Resourse.getResourceImage("data/cactus2.png");
         random = new Random();
 

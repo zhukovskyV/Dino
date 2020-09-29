@@ -98,6 +98,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
                 land.draw(g);
                 mainCharacter.draw(g);
                 enemiesManager.draw(g);
+                mainCharacter.setState(3);
                 g.drawImage(imageGameOverText, 300, 110, null);
                 break;
         }
@@ -116,22 +117,30 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-       // mainCharacter.jump();
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_SPACE:
+                if (gameState == GAME_FIRST_STATE)
+                    gameState = GAME_PLAY_STATE;
+                else if (gameState == GAME_PLAY_STATE)
+                    mainCharacter.jump();
+                else if (gameState == GAME_OVER_STATE) {
+                    resetGame();
+                    gameState = GAME_PLAY_STATE;
+                }
+                break;
+            case KeyEvent.VK_DOWN:
+                if (gameState == GAME_PLAY_STATE)
+                    mainCharacter.Down(true);
+        }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         switch (e.getKeyCode()) {
+            case KeyEvent.VK_DOWN:
+                mainCharacter.Down(false);
             case KeyEvent.VK_SPACE:
-            if (gameState == GAME_FIRST_STATE)
-                gameState = GAME_PLAY_STATE;
-            else if (gameState == GAME_PLAY_STATE)
-                mainCharacter.jump();
-            else if (gameState == GAME_OVER_STATE) {
-                resetGame();
-                gameState = GAME_PLAY_STATE;
-            }
-            break;
+                mainCharacter.setState(0);
         }
     }
 }
