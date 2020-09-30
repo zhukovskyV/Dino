@@ -19,9 +19,9 @@ public class Land {
 
     public Land(GameScreen game) {
         random = new Random();
-        imageLand1 = Resourse.getResourceImage("data/land1.png");
-        imageLand2 = Resourse.getResourceImage("data/land2.png");
-        imageLand3 = Resourse.getResourceImage("data/land3.png");
+        imageLand1 = Resourse.getResourceImage("data/sand1.png");
+        imageLand2 = Resourse.getResourceImage("data/sand2.png");
+        imageLand3 = Resourse.getResourceImage("data/sand3.png");
         listImage = new ArrayList<ImageLand>();
         int numberOfLandTitle = 800 / imageLand1.getWidth() + 2;
 
@@ -35,7 +35,7 @@ public class Land {
 
     public void update() {
         for (ImageLand imageLand : listImage) {
-            imageLand.posX -= 4;
+            imageLand.posX -= 5;
         }
         ImageLand firstElement = listImage.get(0);
         if (listImage.get(0).posX + imageLand1.getWidth() < 0) {

@@ -13,7 +13,7 @@ public class Clouds {
     private List<Cloud> clouds;
 
     public Clouds() {
-        cloudImage = Resourse.getResourceImage("data/cloud.png");
+        cloudImage = Resourse.getResourceImage("data/cloud1.png");
         clouds = new ArrayList<Cloud>();
 
         Cloud cloud1= new Cloud();

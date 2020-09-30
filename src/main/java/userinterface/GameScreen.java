@@ -15,7 +15,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
     public static final int GAME_FIRST_STATE = 0;
     public static final int GAME_PLAY_STATE = 1;
     public static final int GAME_OVER_STATE = 2;
-    public static final float GRAVITY = 0.1f;
+    public static final float GRAVITY = 0.2f;
     public static final float GROUNDY = 250;
 
     private Thread thread;
@@ -77,7 +77,8 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
 
     @Override
     public void paint(Graphics g) {
-        g.setColor(Color.decode("#f7f7f7"));
+        //g.setColor(Color.decode("#f7f7f7"));
+        g.setColor(Color.decode("#9ce8fb"));
         g.fillRect(0, 0, getWidth(), getHeight());
 //        g.setColor(Color.red);
 //        g.drawLine(0, (int)GROUNDY, getWidth(), (int)GROUNDY);

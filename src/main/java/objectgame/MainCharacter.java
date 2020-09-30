@@ -77,8 +77,9 @@ public class MainCharacter {
 
     public void draw(Graphics g) {
         g.setColor(Color.black);
-        //System.out.println(state);
-        g.drawRect((int)x, (int)y, characterRun.getFrame().getWidth(), characterRun.getFrame().getHeight());
+//        System.out.println(state);
+
+       // g.drawRect((int)x, (int)y, characterRun.getFrame().getWidth(), characterRun.getFrame().getHeight());
         switch (state) {
             case RUN:
                 g.drawImage(characterRun.getFrame(), (int) x, (int) y, null);
@@ -87,6 +88,7 @@ public class MainCharacter {
                 g.drawImage(jumping, (int) x, (int) y, null);
                 break;
             case DOWN:
+                g.drawRect((int)x, (int)y, downRunAnim.getWidth(), downRunAnim.getHeight());
                 g.drawImage(downRunAnim, (int) x, (int) y + 20, null);
                 break;
             case DEATH:
@@ -96,7 +98,7 @@ public class MainCharacter {
     }
 
     public void Down(Boolean isDown) {
-        if (isDown)
+        if (isDown && speedY == 0)
             state = DOWN;
         else
             state = RUN;
@@ -104,7 +106,7 @@ public class MainCharacter {
 
     public void jump() {
        if (speedY == 0) {
-           speedY = -4;
+           speedY = -6;
            y += speedY;
            state = JUMP;
        }
