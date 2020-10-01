@@ -22,7 +22,7 @@ public class EnemiesManager {
         this.mainCharacter = mainCharacter;
         enemies = new ArrayList<Enemy>();
         imageCactus1 = Resourse.getResourceImage("data/enemy.png");
-        imageCactus2 = Resourse.getResourceImage("data/cactus2.png");
+        imageCactus2 = Resourse.getResourceImage("data/cactus_2(1).png");
         random = new Random();
 
         Cactus cactus = new Cactus(mainCharacter);

@@ -68,7 +68,7 @@ public class MainCharacter {
         }
         rect.x = (int) x;
         rect.y = (int) y;
-        rect.width = characterRun.getFrame().getWidth() - 8;
+        rect.width = characterRun.getFrame().getWidth() - 20;
         rect.height = characterRun.getFrame().getHeight();
     }
     public  Rectangle getBound() {
@@ -88,7 +88,7 @@ public class MainCharacter {
                 g.drawImage(jumping, (int) x, (int) y, null);
                 break;
             case DOWN:
-                g.drawRect((int)x, (int)y, downRunAnim.getWidth(), downRunAnim.getHeight());
+                g.drawRect((int)x, (int)y + 40, downRunAnim.getWidth(), downRunAnim.getHeight());
                 g.drawImage(downRunAnim, (int) x, (int) y + 20, null);
                 break;
             case DEATH:

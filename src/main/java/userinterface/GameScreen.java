@@ -3,13 +3,15 @@ package userinterface;
 import objectgame.*;
 import util.Resourse;
 
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.applet.AudioClip;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
-
+import java.io.File;
+import java.io.IOException;
 
 public class GameScreen extends JPanel implements Runnable, KeyListener {
     public static final int GAME_FIRST_STATE = 0;
@@ -55,6 +57,32 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void jumpSound() {
+        String soundName = "data/JUMP2.WAV";
+        AudioInputStream audioInputStream = null;
+        try {
+            audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Clip clip = null;
+        try {
+            clip = AudioSystem.getClip();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
+        try {
+            clip.open(audioInputStream);
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        clip.start();
     }
 
     public void update() {
@@ -122,8 +150,10 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
             case KeyEvent.VK_SPACE:
                 if (gameState == GAME_FIRST_STATE)
                     gameState = GAME_PLAY_STATE;
-                else if (gameState == GAME_PLAY_STATE)
+                else if (gameState == GAME_PLAY_STATE) {
                     mainCharacter.jump();
+                    jumpSound();
+                }
                 else if (gameState == GAME_OVER_STATE) {
                     resetGame();
                     gameState = GAME_PLAY_STATE;
