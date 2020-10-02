@@ -17,7 +17,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
     public static final int GAME_FIRST_STATE = 0;
     public static final int GAME_PLAY_STATE = 1;
     public static final int GAME_OVER_STATE = 2;
-    public static final float GRAVITY = 0.2f;
+    public static final float GRAVITY = 0.15f;
     public static final float GROUNDY = 250;
 
     private Thread thread;
@@ -26,6 +26,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
     private Clouds clouds;
     private EnemiesManager enemiesManager;
     private int score;
+    private boolean countSound = true;
 
     private int gameState = GAME_FIRST_STATE;
 
@@ -59,32 +60,6 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
         }
     }
 
-    public static void jumpSound() {
-        String soundName = "data/JUMP2.WAV";
-        AudioInputStream audioInputStream = null;
-        try {
-            audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
-        } catch (UnsupportedAudioFileException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Clip clip = null;
-        try {
-            clip = AudioSystem.getClip();
-        } catch (LineUnavailableException e) {
-            e.printStackTrace();
-        }
-        try {
-            clip.open(audioInputStream);
-        } catch (LineUnavailableException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        clip.start();
-    }
-
     public void update() {
         switch (gameState) {
             case GAME_PLAY_STATE:
@@ -116,6 +91,8 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
                 mainCharacter.draw(g);
                 break;
             case GAME_PLAY_STATE:
+                if (!countSound)
+                    countSound = true;
                 clouds.draw(g);
                 land.draw(g);
                 mainCharacter.draw(g);
@@ -129,6 +106,10 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
                 enemiesManager.draw(g);
                 mainCharacter.setState(3);
                 g.drawImage(imageGameOverText, 300, 110, null);
+                if (countSound) {
+                    mainCharacter.sound();
+                    countSound = false;
+                }
                 break;
         }
     }
@@ -152,7 +133,6 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
                     gameState = GAME_PLAY_STATE;
                 else if (gameState == GAME_PLAY_STATE) {
                     mainCharacter.jump();
-                    jumpSound();
                 }
                 else if (gameState == GAME_OVER_STATE) {
                     resetGame();

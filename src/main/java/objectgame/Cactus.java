@@ -1,7 +1,5 @@
 package objectgame;
 
-import util.Resourse;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -17,7 +15,7 @@ public class Cactus extends Enemy {
             this.mainCharacter = mainCharacter;
             //image = Resourse.getResourceImage("data/cactus_1.png");
             posX = 300;
-            posY = 100;
+            posY = 165;
             rect = new Rectangle();
         }
 

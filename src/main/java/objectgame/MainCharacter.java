@@ -5,11 +5,15 @@ package objectgame;
 import util.Animation;
 import util.Resourse;
 
+import javax.sound.sampled.*;
+
 import static userinterface.GameScreen.GRAVITY;
 import static userinterface.GameScreen.GROUNDY;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class MainCharacter {
     private static final int RUN = 0;
@@ -32,12 +36,13 @@ public class MainCharacter {
 
     private float speedY = 0;
     private Animation characterRun;
-//    private Animation normalRunAnim;
     private BufferedImage downRunAnim;
     private BufferedImage jumping;
     private BufferedImage death;
     private Rectangle rect;
     private boolean isAlive = true;
+    private boolean soundCount = false;
+    private boolean score = true;
 
 
     public MainCharacter() {
@@ -54,6 +59,47 @@ public class MainCharacter {
 
         rect = new Rectangle();
 
+    }
+
+    public void sound() {
+        String soundName = null;
+
+        switch (state) {
+            case JUMP:
+                soundName = "data/JUMP2.WAV";
+                break;
+            case DOWN:
+                soundName = "data/RUNAWAY.WAV";
+                break;
+            case DEATH:
+                soundName = "data/KAMIKAZE.WAV";
+                break;
+        }
+
+        AudioInputStream audioInputStream = null;
+        try {
+            audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Clip clip = null;
+        try {
+            clip = AudioSystem.getClip();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
+        try {
+            clip.open(audioInputStream);
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        if (soundCount) {
+            clip.start();
+//        }
     }
 
     public void update() {
@@ -82,6 +128,7 @@ public class MainCharacter {
        // g.drawRect((int)x, (int)y, characterRun.getFrame().getWidth(), characterRun.getFrame().getHeight());
         switch (state) {
             case RUN:
+                g.drawRect((int)x, (int)y, characterRun.getFrame().getWidth(), characterRun.getFrame().getHeight());
                 g.drawImage(characterRun.getFrame(), (int) x, (int) y, null);
                 break;
             case JUMP:
@@ -98,10 +145,17 @@ public class MainCharacter {
     }
 
     public void Down(Boolean isDown) {
-        if (isDown && speedY == 0)
+        if (isDown && speedY == 0) {
             state = DOWN;
-        else
+            if (soundCount) {
+                sound();
+                soundCount = false;
+            }
+        }
+        else {
             state = RUN;
+            soundCount = true;
+        }
     }
 
     public void jump() {
@@ -109,6 +163,7 @@ public class MainCharacter {
            speedY = -6;
            y += speedY;
            state = JUMP;
+           sound();
        }
     }
 
