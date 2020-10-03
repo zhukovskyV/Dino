@@ -20,7 +20,7 @@ public class Cactus extends Enemy {
         }
 
         public void update() {
-            posX -= 5;
+            posX -= 6;
             rect.x = posX;
             rect.y = posY;
             rect.width = image.getWidth();

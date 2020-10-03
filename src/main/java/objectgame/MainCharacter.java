@@ -48,7 +48,7 @@ public class MainCharacter {
     }
 
     public MainCharacter() {
-        characterRun = new Animation(50);
+        characterRun = new Animation(45);
         characterRun.addFrame(Resourse.getResourceImage("data/character_move1.png"));
         characterRun.addFrame(Resourse.getResourceImage("data/character_move2.png"));
         characterRun.addFrame(Resourse.getResourceImage("data/character_move3.png"));
@@ -80,8 +80,6 @@ public class MainCharacter {
                 soundName = "data/good_one.wav";
                 break;
         }
-//        if (getScore())
-//            soundName = "data/good_one.wav";
 
         AudioInputStream audioInputStream = null;
         try {
@@ -115,8 +113,6 @@ public class MainCharacter {
             speedY += GRAVITY;
             y += speedY;
         }
-//        rect.x = (int) x;
-//        rect.y = (int) y;
 
         switch (state) {
             case RUN:
@@ -139,24 +135,21 @@ public class MainCharacter {
                 break;
         }
     }
+
     public  Rectangle getBound() {
         return rect;
     }
 
     public void draw(Graphics g) {
         g.setColor(Color.black);
-        //System.out.println(state);
-        // g.drawRect((int)x, (int)y, characterRun.getFrame().getWidth(), characterRun.getFrame().getHeight());
         switch (state) {
             case RUN:
-//                g.drawRect((int)x, (int)y, characterRun.getFrame().getWidth(), characterRun.getFrame().getHeight());
                 g.drawImage(characterRun.getFrame(), (int) x, (int) y, null);
                 break;
             case JUMP:
                 g.drawImage(jumping, (int) x, (int) y, null);
                 break;
             case DOWN:
-//                g.drawRect((int)x, (int)y, downRunAnim.getWidth(), downRunAnim.getHeight());
                 g.drawImage(downRunAnim, (int) x, (int) y + 10, null);
                 break;
             case DEATH:
