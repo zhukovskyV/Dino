@@ -3,15 +3,12 @@ package userinterface;
 import objectgame.*;
 import util.Resourse;
 
-import javax.sound.sampled.*;
 import javax.swing.*;
-import java.applet.AudioClip;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+
 
 public class GameScreen extends JPanel implements Runnable, KeyListener {
     public static final int GAME_FIRST_STATE = 0;
@@ -76,6 +73,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
 
     public void plusScore(int score) {
         this.score += score;
+        mainCharacter.sound(4);
     }
 
     @Override
@@ -107,7 +105,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
                 mainCharacter.setState(3);
                 g.drawImage(imageGameOverText, 300, 110, null);
                 if (countSound) {
-                    mainCharacter.sound();
+                    mainCharacter.sound(3);
                     countSound = false;
                 }
                 break;

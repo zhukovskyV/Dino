@@ -64,6 +64,7 @@ public class EnemiesManager {
         cactus.setX(800);
         if (random.nextBoolean()) {
             cactus.setImage(imageCactus1);
+            cactus.setY(100);
         }
         else {
             cactus.setImage(imageCactus2);

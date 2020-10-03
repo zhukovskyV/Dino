@@ -34,6 +34,7 @@ public class Cactus extends Enemy {
         @Override
         public void draw(Graphics g) {
             g.drawImage(image, posX, posY, null);
+//            g.drawRect(posX, posY, image.getWidth(), image.getHeight());
         }
 
         public void setX(int x) {
