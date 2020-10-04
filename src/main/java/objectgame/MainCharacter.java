@@ -161,14 +161,14 @@ public class MainCharacter {
     public void Down(Boolean isDown) {
         if (isDown && speedY == 0) {
             state = DOWN;
-            if (soundCount) {
+            if (!soundCount) {
                 sound(2);
-                soundCount = false;
+                soundCount = true;
             }
         }
         else {
             state = RUN;
-            soundCount = true;
+            soundCount = false;
         }
     }
 

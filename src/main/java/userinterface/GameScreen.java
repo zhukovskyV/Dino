@@ -14,7 +14,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
     public static final int GAME_FIRST_STATE = 0;
     public static final int GAME_PLAY_STATE = 1;
     public static final int GAME_OVER_STATE = 2;
-    public static final float GRAVITY = 0.15f;
+    public static final float GRAVITY = 0.2f;
     public static final float GROUNDY = 250;
 
     private Thread thread;
@@ -22,7 +22,9 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
     private Land land;
     private Clouds clouds;
     private EnemiesManager enemiesManager;
+    private GameMenu gameMenu;
     private int score;
+    private int hiScore = 0;
     private boolean countSound = true;
 
     private int gameState = GAME_FIRST_STATE;
@@ -32,6 +34,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
     public GameScreen() {
         thread = new Thread(this);
         mainCharacter = new MainCharacter();
+        gameMenu = new GameMenu();
         mainCharacter.setX(50);
         mainCharacter.setY(60);
         land = new Land(this);
@@ -86,7 +89,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
 
         switch (gameState) {
             case GAME_FIRST_STATE:
-                mainCharacter.draw(g);
+//                gameMenu.render(g);
                 break;
             case GAME_PLAY_STATE:
                 if (!countSound)
@@ -95,9 +98,14 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
                 land.draw(g);
                 mainCharacter.draw(g);
                 enemiesManager.draw(g);
-                g.drawString("HI " + String.valueOf(score), 720, 20);
+                g.drawString("HI: " + hiScore, 650, 20);
+                g.drawString("Score: " + score, 720, 20);
                 break;
             case GAME_OVER_STATE:
+                if (score > hiScore) {
+                    hiScore = score;
+                }
+                score = 0;
                 clouds.draw(g);
                 land.draw(g);
                 mainCharacter.draw(g);
