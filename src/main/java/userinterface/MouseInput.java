@@ -21,9 +21,15 @@ public class MouseInput implements MouseListener {
 
         //Play
         if (mx >= 350 && mx <= 570) {
-            if (my >= 150 && my <= 200)
-                System.out.println("Pressed");
-//            gameState = GAME_PLAY_STATE;
+            if (my >= 120 && my <= 170) {
+//                GameScreen.State = GameScreen.STATE.GAME;
+                GameScreen.gameState = GameScreen.GAME_PLAY_STATE;
+            }
+        }
+        if (mx >= 350 && mx <= 570) {
+            if (my >= 260 && my <= 310) {
+                System.exit(1);
+            }
         }
     }
 

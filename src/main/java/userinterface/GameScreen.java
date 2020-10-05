@@ -27,9 +27,16 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
     private int hiScore = 0;
     private boolean countSound = true;
 
-    private int gameState = GAME_FIRST_STATE;
+    public static int gameState = GAME_FIRST_STATE;
 
     private BufferedImage imageGameOverText;
+    private BufferedImage background;
+
+//    public static enum STATE {
+//        MENU,
+//        GAME
+//    };
+//    public static STATE State = STATE.MENU;
 
     public GameScreen() {
         thread = new Thread(this);
@@ -41,6 +48,8 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
         clouds = new Clouds();
         enemiesManager = new EnemiesManager(mainCharacter, this);
         imageGameOverText = Resourse.getResourceImage("data/gameover_text.png");
+        background = Resourse.getResourceImage("data/desert.jpg");
+        this.addMouseListener(new MouseInput());
   }
 
     public void startGame() {
@@ -79,19 +88,21 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
         mainCharacter.sound(4);
     }
 
+
     @Override
     public void paint(Graphics g) {
-        //g.setColor(Color.decode("#f7f7f7"));
-        g.setColor(Color.decode("#9ce8fb"));
-        g.fillRect(0, 0, getWidth(), getHeight());
-//        g.setColor(Color.red);
-//        g.drawLine(0, (int)GROUNDY, getWidth(), (int)GROUNDY);
+//        g.drawImage(background, 0,0, null);
+//        g.setColor(Color.decode("#9ce8fb"));
+//        g.fillRect(0, 0, getWidth(), getHeight());
 
         switch (gameState) {
             case GAME_FIRST_STATE:
-//                gameMenu.render(g);
+                g.drawImage(background, 0,0, null);
+                gameMenu.render(g);
                 break;
             case GAME_PLAY_STATE:
+                g.setColor(Color.decode("#9ce8fb"));
+                g.fillRect(0, 0, getWidth(), getHeight());
                 if (!countSound)
                     countSound = true;
                 clouds.draw(g);
@@ -102,9 +113,10 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
                 g.drawString("Score: " + score, 720, 20);
                 break;
             case GAME_OVER_STATE:
-                if (score > hiScore) {
+                g.setColor(Color.decode("#9ce8fb"));
+                g.fillRect(0, 0, getWidth(), getHeight());
+                if (score > hiScore)
                     hiScore = score;
-                }
                 score = 0;
                 clouds.draw(g);
                 land.draw(g);
