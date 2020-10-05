@@ -32,12 +32,6 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
     private BufferedImage imageGameOverText;
     private BufferedImage background;
 
-//    public static enum STATE {
-//        MENU,
-//        GAME
-//    };
-//    public static STATE State = STATE.MENU;
-
     public GameScreen() {
         thread = new Thread(this);
         mainCharacter = new MainCharacter();
