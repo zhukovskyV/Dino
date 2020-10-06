@@ -31,7 +31,7 @@ public class EnemiesManager {
 
     public void update() {
         for (Enemy e : enemies) {
-            e.update();
+            e.update(gameScreen);
             if (e.isOver() && !e.isScoreGot()) {
                 gameScreen.plusScore(20);
                 e.setIsScoreGot(true);

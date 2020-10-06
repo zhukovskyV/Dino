@@ -18,11 +18,7 @@ public class GameMenu {
         Font fnt1 = new Font("standard 07_57", Font.BOLD, 30);
         g.setFont(fnt1);
         g.drawString("PLAY", playButton.x + 19, playButton.y + 30);
-        System.out.println();
-//        g2d.draw(playButton);
         g.drawString("HELP", helpButton.x + 19, helpButton.y + 30);
-//        g2d.draw(helpButton);
         g.drawString("QUIT", quitButton.x + 19, quitButton.y + 30);
-//        g2d.draw(quitButton);
     }
 }

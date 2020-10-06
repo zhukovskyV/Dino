@@ -14,23 +14,23 @@ public class MouseInput implements MouseListener {
     public void mousePressed(MouseEvent e) {
         int mx = e.getX();
         int my = e.getY();
-        /*
-        public Rectangle playButton = new Rectangle(350, 150, 100, 50);
-        public Rectangle quitButton = new Rectangle(350, 220, 100, 50);
-         */
 
-        //Play
         if (mx >= 350 && mx <= 570) {
             if (my >= 120 && my <= 170) {
-//                GameScreen.State = GameScreen.STATE.GAME;
                 GameScreen.gameState = GameScreen.GAME_PLAY_STATE;
             }
         }
         if (mx >= 350 && mx <= 570) {
             if (my >= 260 && my <= 310) {
-                System.exit(1);
+                System.exit(0);
             }
         }
+        if (mx >= 350 && mx <= 570) {
+            if (my >= 190 && my <= 240) {
+                GameScreen.gameState = GameScreen.HELP_MENU;
+            }
+        }
+
     }
 
     @Override

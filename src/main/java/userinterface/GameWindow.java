@@ -1,17 +1,13 @@
 package userinterface;
 
 import javax.swing.JFrame;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-
-import javax.swing.*;
 
 public class GameWindow extends JFrame {
 
-    private GameScreen gameScreen;
+    private final GameScreen gameScreen;
 
     public GameWindow() {
-        super("Peepo Run!");
+        super("Peppo Run!");
 
         setSize(800, 350);
         setLocation(400, 200);
@@ -25,7 +21,7 @@ public class GameWindow extends JFrame {
         gameScreen.startGame();
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         GameWindow gw = new GameWindow();
         gw.setVisible(true);
         gw.startGame();

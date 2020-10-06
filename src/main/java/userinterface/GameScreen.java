@@ -14,28 +14,36 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
     public static final int GAME_FIRST_STATE = 0;
     public static final int GAME_PLAY_STATE = 1;
     public static final int GAME_OVER_STATE = 2;
+    public static final int HELP_MENU = 3;
     public static final float GRAVITY = 0.2f;
     public static final float GROUNDY = 250;
 
-    private Thread thread;
-    private MainCharacter mainCharacter;
-    private Land land;
-    private Clouds clouds;
-    private EnemiesManager enemiesManager;
-    private GameMenu gameMenu;
+    private final Thread thread;
+    private final MainCharacter mainCharacter;
+    private final Land land;
+    private final Clouds clouds;
+    private final EnemiesManager enemiesManager;
+    private final GameMenu gameMenu;
+    private final HelpMenu helpMenu;
+
+    public int getScore() {
+        return score;
+    }
+
     private int score;
     private int hiScore = 0;
     private boolean countSound = true;
 
     public static int gameState = GAME_FIRST_STATE;
 
-    private BufferedImage imageGameOverText;
-    private BufferedImage background;
+    private final BufferedImage imageGameOverText;
+    private final BufferedImage background;
 
     public GameScreen() {
         thread = new Thread(this);
         mainCharacter = new MainCharacter();
         gameMenu = new GameMenu();
+        helpMenu = new HelpMenu();
         mainCharacter.setX(50);
         mainCharacter.setY(60);
         land = new Land(this);
@@ -64,16 +72,14 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
     }
 
     public void update() {
-        switch (gameState) {
-            case GAME_PLAY_STATE:
-                mainCharacter.update();
-                land.update();
-                clouds.update();
-                enemiesManager.update();
-                if (!mainCharacter.getAlive()) {
-                    gameState = GAME_OVER_STATE;
-                }
-                break;
+        if (gameState == GAME_PLAY_STATE) {
+            mainCharacter.update();
+            land.update();
+            clouds.update();
+            enemiesManager.update();
+            if (!mainCharacter.getAlive()) {
+                gameState = GAME_OVER_STATE;
+            }
         }
     }
 
@@ -88,17 +94,22 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
 //        g.drawImage(background, 0,0, null);
 //        g.setColor(Color.decode("#9ce8fb"));
 //        g.fillRect(0, 0, getWidth(), getHeight());
+        g.drawImage(background, 0,0, null);
 
         switch (gameState) {
             case GAME_FIRST_STATE:
-                g.drawImage(background, 0,0, null);
                 gameMenu.render(g);
+                break;
+            case HELP_MENU:
+                helpMenu.helpMenu(g);
                 break;
             case GAME_PLAY_STATE:
                 g.setColor(Color.decode("#9ce8fb"));
                 g.fillRect(0, 0, getWidth(), getHeight());
+
                 if (!countSound)
                     countSound = true;
+
                 clouds.draw(g);
                 land.draw(g);
                 mainCharacter.draw(g);
@@ -118,6 +129,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
                 enemiesManager.draw(g);
                 mainCharacter.setState(3);
                 g.drawImage(imageGameOverText, 300, 110, null);
+
                 if (countSound) {
                     mainCharacter.sound(3);
                     countSound = false;
@@ -154,6 +166,10 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
             case KeyEvent.VK_DOWN:
                 if (gameState == GAME_PLAY_STATE)
                     mainCharacter.Down(true);
+                break;
+            case KeyEvent.VK_ESCAPE:
+                gameState = GAME_FIRST_STATE;
+                break;
         }
     }
 
@@ -164,6 +180,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
                 mainCharacter.Down(false);
             case KeyEvent.VK_SPACE:
                 mainCharacter.setState(0);
+
         }
     }
 }

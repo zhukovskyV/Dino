@@ -1,5 +1,7 @@
 package objectgame;
 
+import userinterface.GameScreen;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -10,17 +12,20 @@ public class Cactus extends Enemy {
         private Rectangle rect;
         private MainCharacter mainCharacter;
         private boolean isScoreGot = false;
+        private GameScreen gameScreen;
 
         public Cactus(MainCharacter mainCharacter) {
             this.mainCharacter = mainCharacter;
-            //image = Resourse.getResourceImage("data/cactus_1.png");
             posX = 300;
             posY = 165;
             rect = new Rectangle();
         }
 
-        public void update() {
-            posX -= 6;
+        public void update(GameScreen gameScreen) {
+            if (gameScreen.getScore() > 100)
+                posX -= 9;
+            else
+                posX -= 6;
             rect.x = posX;
             rect.y = posY;
             rect.width = image.getWidth();

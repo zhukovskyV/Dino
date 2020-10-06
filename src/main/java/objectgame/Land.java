@@ -13,16 +13,18 @@ import static userinterface.GameScreen.GROUNDY;
 
 public class Land {
 
-    private List<ImageLand> listImage;
+    private final List<ImageLand> listImage;
     private BufferedImage imageLand1, imageLand2, imageLand3;
     private Random random;
+    private GameScreen gameScreen;
 
     public Land(GameScreen game) {
+        this.gameScreen = game;
         random = new Random();
         imageLand1 = Resourse.getResourceImage("data/sand1.png");
         imageLand2 = Resourse.getResourceImage("data/sand2.png");
         imageLand3 = Resourse.getResourceImage("data/sand3.png");
-        listImage = new ArrayList<ImageLand>();
+        listImage = new ArrayList<>();
         int numberOfLandTitle = 800 / imageLand1.getWidth() + 2;
 
         for (int i = 0; i < numberOfLandTitle; i++) {
@@ -35,7 +37,10 @@ public class Land {
 
     public void update() {
         for (ImageLand imageLand : listImage) {
-            imageLand.posX -= 6;
+            if (gameScreen.getScore() > 100)
+                imageLand.posX -= 9;
+            else
+                imageLand.posX -= 6;
         }
         ImageLand firstElement = listImage.get(0);
         if (listImage.get(0).posX + imageLand1.getWidth() < 0) {
@@ -49,10 +54,6 @@ public class Land {
         for (ImageLand imageLand:listImage) {
             g.drawImage(imageLand.image,imageLand.posX, (int)GROUNDY - 20, null);
         }
-//        g.drawImage(imageLand1,0, (int)GROUNDY - 15, null);
-//        g.drawImage(imageLand2,0 + imageLand2.getWidth(), (int)GROUNDY - 15, null);
-//        g.drawImage(imageLand3,0 + imageLand3.getWidth() * 2, (int)GROUNDY - 15, null);
-//        g.drawImage(imageLand1,0 + imageLand1.getWidth() * 3, (int)GROUNDY - 15, null);
     }
 
     private BufferedImage getImageLand() {
@@ -64,7 +65,7 @@ public class Land {
         }
     }
 
-    private class ImageLand {
+    private static class ImageLand {
         int posX;
         BufferedImage image;
     }

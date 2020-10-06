@@ -1,7 +1,5 @@
 package objectgame;
 
-
-
 import util.Animation;
 import util.Resourse;
 
