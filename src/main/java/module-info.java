@@ -1,4 +1,8 @@
-//module Dino.main {
-//    requires swing.controls;
-//    requires javafx.graphics;
-//}
+module Dino.main {
+    exports world.ucode.userinterface;
+    exports world.ucode.objectgame;
+    exports world.ucode.utils;
+
+    requires java.base;
+    requires java.desktop;
+}

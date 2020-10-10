@@ -23,91 +23,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b81900be-4cfc-41bc-8b97-e99da6b9bbc0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Dino.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/objectgame/Cactus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/objectgame/Clouds$Cloud.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/objectgame/Clouds.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/objectgame/EnemiesManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/objectgame/Enemy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/objectgame/Land$ImageLand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/objectgame/Land.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/objectgame/MainCharacter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/userinterface/GameMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/userinterface/GameScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/userinterface/GameWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/userinterface/HelpMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/userinterface/MouseInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/util/Animation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/util/Resourse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JUMP1.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/JUMP1.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JUMP2.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/JUMP2.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/NOOO.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/NOOO.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/RUNAWAY.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/RUNAWAY.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/UH-OH.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UH-OH.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/WARNINGBEEP.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/WARNINGBEEP.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cactus_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cactus_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/character_move1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/character_move1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/character_move2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/character_move2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/character_move3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/character_move3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/character_move4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/character_move4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/character_move5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/character_move5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/character_move6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/character_move6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cloud1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cloud1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cloud2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cloud2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/death.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/death.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/desert.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/desert.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/down.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/down.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/enemy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/enemy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/gameover_text.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gameover_text.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/good_one.WAV" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/good_one.WAV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/jump.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jump.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/sand1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sand1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/sand2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sand2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/sand3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sand3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectgame/Cactus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/ucode/objectgame/Cactus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectgame/Clouds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/ucode/objectgame/Clouds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectgame/EnemiesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/ucode/objectgame/EnemiesManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectgame/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/ucode/objectgame/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectgame/Land.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/ucode/objectgame/Land.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objectgame/MainCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/ucode/objectgame/MainCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userinterface/GameMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userinterface/GameScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userinterface/GameWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userinterface/HelpMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/userinterface/MouseInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/ucode/util/Animation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/Resourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/ucode/util/Resourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/world/ucode/objectgame/Cactus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/world/ucode/objectgame/Cactus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/world/ucode/objectgame/Land$ImageLand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/world/ucode/objectgame/Land$ImageLand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/world/ucode/objectgame/Land.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/world/ucode/objectgame/Land.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/Dino-1.0-SNAPSHOT.tar" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/Dino-1.0-SNAPSHOT.tar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/Dino-1.0-SNAPSHOT.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/Dino-1.0-SNAPSHOT.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/Dino-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/Dino-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/world/ucode/objectgame/Cactus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/ucode/objectgame/Cactus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/world/ucode/objectgame/Land.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/ucode/objectgame/Land.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,19 +117,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GameWindow (1)" />
@@ -214,7 +133,8 @@
       <option name="presentableId" value="Default" />
       <updated>1601982938100</updated>
       <workItem from="1601982939121" duration="13622000" />
-      <workItem from="1602081749075" duration="4044000" />
+      <workItem from="1602081749075" duration="4232000" />
+      <workItem from="1602247761118" duration="2307000" />
     </task>
     <servers />
   </component>
@@ -238,22 +158,22 @@
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
     <state x="1065" y="406" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1337@0.23.2560.1337" timestamp="1602007253770" />
-    <state width="1763" height="375" key="GridCell.Tab.0.bottom" timestamp="1602086971778">
+    <state width="1763" height="375" key="GridCell.Tab.0.bottom" timestamp="1602089190266">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state width="1763" height="375" key="GridCell.Tab.0.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1602086971778" />
-    <state width="1763" height="375" key="GridCell.Tab.0.center" timestamp="1602086971778">
+    <state width="1763" height="375" key="GridCell.Tab.0.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1602089190266" />
+    <state width="1763" height="375" key="GridCell.Tab.0.center" timestamp="1602089190265">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state width="1763" height="375" key="GridCell.Tab.0.center/0.23.2560.1337@0.23.2560.1337" timestamp="1602086971778" />
-    <state width="1763" height="375" key="GridCell.Tab.0.left" timestamp="1602086971777">
+    <state width="1763" height="375" key="GridCell.Tab.0.center/0.23.2560.1337@0.23.2560.1337" timestamp="1602089190265" />
+    <state width="1763" height="375" key="GridCell.Tab.0.left" timestamp="1602089190265">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state width="1763" height="375" key="GridCell.Tab.0.left/0.23.2560.1337@0.23.2560.1337" timestamp="1602086971777" />
-    <state width="1763" height="375" key="GridCell.Tab.0.right" timestamp="1602086971778">
+    <state width="1763" height="375" key="GridCell.Tab.0.left/0.23.2560.1337@0.23.2560.1337" timestamp="1602089190265" />
+    <state width="1763" height="375" key="GridCell.Tab.0.right" timestamp="1602089190265">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state width="1763" height="375" key="GridCell.Tab.0.right/0.23.2560.1337@0.23.2560.1337" timestamp="1602086971778" />
+    <state width="1763" height="375" key="GridCell.Tab.0.right/0.23.2560.1337@0.23.2560.1337" timestamp="1602089190265" />
     <state width="1763" height="460" key="GridCell.Tab.1.bottom" timestamp="1602008377323">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>

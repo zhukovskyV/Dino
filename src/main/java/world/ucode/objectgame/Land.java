@@ -37,10 +37,13 @@ public class Land {
 
     public void update() {
         for (ImageLand imageLand : listImage) {
-            if (gameScreen.getScore() > 100)
+            if (gameScreen.getScore() > 100) {
                 imageLand.posX -= 9;
-//            if (gameScreen.getScore() > 200)
-//                imageLand.posX -= 2;
+                if (gameScreen.getScore() > 300)
+                    imageLand.posX -= 2;
+                if (gameScreen.getScore() > 500)
+                    imageLand.posX -= 2;
+            }
             else
                 imageLand.posX -= 6;
         }

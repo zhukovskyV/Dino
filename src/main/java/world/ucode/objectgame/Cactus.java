@@ -22,10 +22,13 @@ public class Cactus extends Enemy {
         }
 
         public void update(GameScreen gameScreen) {
-            if (gameScreen.getScore() > 100)
+            if (gameScreen.getScore() > 100) {
                 posX -= 9;
-//            if (gameScreen.getScore() > 200)
-//                posX -= 2;
+                if (gameScreen.getScore() > 300)
+                    posX -= 2;
+                if (gameScreen.getScore() > 500)
+                    posX -= 2;
+                }
             else
                 posX -= 6;
             rect.x = posX;
