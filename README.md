@@ -20,5 +20,5 @@ appears once the player loses. It is notify the player that the game is over.
 
 #### **Video of the game:**
 
-![](src/resources/demo.gif)
+![](src/main/resources/demo.gif)
 
