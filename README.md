@@ -1,4 +1,4 @@
-### **PEEPO RUN game:**
+### **PEPPO RUN game:**
  
 Implementation of endless runner game like Google T-Rex.
 
